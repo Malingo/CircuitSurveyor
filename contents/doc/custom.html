@@ -1,0 +1,434 @@
+<html>
+	<head>
+		<title>
+			CircuitSurveyor :: Creating custom circuit files.
+		</title>
+		<style type="text/css">
+			body {
+				font-family: "Book Antiqua", Palatino, serif;
+			}
+			b {
+				font-family: "Courier New", Courier, monospace;
+				font-weight: bold;
+			}
+			td.code {
+				padding: 7;
+				background-color: #D3D3D3;
+			}
+		</style>
+		<script type="text/javascript" src="media/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#complete-show").click(function() {
+					$("#complete-show").hide();
+					$("#complete-hide").show();
+					$("#complete-example").show();
+				});
+				$("#complete-hide").click(function() {
+					$("#complete-show").show();
+					$("#complete-hide").hide();
+					$("#complete-example").hide();
+				});
+				$("#grid-show").click(function() {
+					$("#grid-show").hide();
+					$("#grid-hide").show();
+					$("#grid-example").show();
+				});
+				$("#grid-hide").click(function() {
+					$("#grid-show").show();
+					$("#grid-hide").hide();
+					$("#grid-example").hide();
+				});
+				$("#intersect-show").click(function() {
+					$("#intersect-show").hide();
+					$("#intersect-hide").show();
+					$("#intersect-example").show();
+				});
+				$("#intersect-hide").click(function() {
+					$("#intersect-show").show();
+					$("#intersect-hide").hide();
+					$("#intersect-example").hide();
+				});
+				$("#batteries-show").click(function() {
+					$("#batteries-show").hide();
+					$("#batteries-hide").show();
+					$("#batteries-example").show();
+				});
+				$("#batteries-hide").click(function() {
+					$("#batteries-show").show();
+					$("#batteries-hide").hide();
+					$("#batteries-example").hide();
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<p>
+			<em><a href="index.html">&lt; Back to main page</a></em>
+		</p>
+
+		<h1>
+			How to create a custom circuit file for CircuitSurveyor
+		</h1>
+		
+		<blockquote>
+
+			<h2>
+				Overview:
+			</h2>
+			
+			<blockquote>
+				<p>
+					CircuitSurveyor circuits are specified on a rectangular grid of points. Each 
+					circuit element (wire, resistor, or battery) must be positioned horizontally or
+					vertically with both endpoints on a gridpoint. Adjacent elements' endpoints
+					share a gridpoint.
+				</p>
+			</blockquote>
+			
+			<h2>
+				Complete example:
+			</h2>
+			
+			<blockquote>
+				<p>
+					<strong>
+						(<a href="#complete-hide" id="complete-show">show example</a><a
+						style="display: none;" href="#complete-show" id="complete-hide">hide
+						example</a>)
+					</strong>
+				</p>
+				<p id="complete-example" style="display: none;">
+					<table>
+						<tr>
+							<td>
+								<em>This custom circuit file...</em><br />&nbsp;
+							</td>
+							<td>
+								<em>...would result in this circuit. (Colors added for illustrative
+								purposes only)</em><br />&nbsp;
+							</td>
+						</tr>
+						<tr>
+							<td class="code">
+								<b>
+									<font color="#696969">#&nbsp;Here&nbsp;is&nbsp;a&nbsp;complete&nbsp;circuit&nbsp;file!&nbsp;This&nbsp;is&nbsp;an<br />
+														  #&nbsp;introductory&nbsp;comment,&nbsp;followed&nbsp;by&nbsp;some&nbsp;blank&nbsp;lines!</font><br />
+									<br />
+									<br />
+									<font color="#000000">15,10</font><br />
+									<font color="#EC008C">w&nbsp;0,5&nbsp;9,5</font><br />
+									<font color="#F7941E">r&nbsp;10,0&nbsp;14,0&nbsp;23</font>&nbsp;<font color="#696969">#&nbsp;This&nbsp;line&nbsp;describes&nbsp;a&nbsp;23-ohm&nbsp;resistor</font><br />
+									<font color="#92278F">b&nbsp;7,0&nbsp;7,5&nbsp;15.16</font><br />
+									<font color="#00AEEF">w&nbsp;0,0&nbsp;7,0</font> &nbsp;<font color="#696969">#&nbsp;Due&nbsp;to&nbsp;the&nbsp;intersection&nbsp;with&nbsp;the&nbsp;battery,</font><br />
+									<font color="#FFD800">w&nbsp;7,0&nbsp;10,0</font>&nbsp;<font color="#696969">#&nbsp;this&nbsp;wire&nbsp;must&nbsp;be&nbsp;described&nbsp;in&nbsp;two&nbsp;pieces.</font><br />
+									<br />
+									<font color="#696969">#&nbsp;The&nbsp;previous&nbsp;line&nbsp;was&nbsp;left&nbsp;blank.&nbsp;The&nbsp;following&nbsp;line<br />
+														  #&nbsp;describes&nbsp;a&nbsp;4.2-volt&nbsp;battery,&nbsp;with&nbsp;its&nbsp;positive<br />
+														  #&nbsp;terminal&nbsp;upward:</font><br />
+									<font color="#25408F">b&nbsp;7,9&nbsp;7,5&nbsp;4.2</font><br />
+									<font color="#D2232A">w&nbsp;14,9&nbsp;14,0</font><br />
+									<font color="#00A99D">w&nbsp;7,9&nbsp;14,9</font>&nbsp;<font color=#696969>#&nbsp;Another&nbsp;in-line&nbsp;comment</font><br />
+									<font color="#41AD49">r&nbsp;0,5&nbsp;0,0&nbsp;8.0</font>
+								</b>
+							</td>
+							<td>
+								<img src="media/complete.jpg" />
+							</td>
+						</tr>
+					</table>
+				</p>
+			</blockquote>
+			
+			<h2>
+				What to do:
+			</h2>
+			
+			<blockquote>
+			
+				<h3>
+					1. Create the file.
+				</h3>
+				
+				<blockquote>
+					<p>
+						Create a text file (with a <b>.txt</b> extention). Note that the name of the
+						file is how CircuitSurveyor will list the circuit in the list of available
+						circuits, so name your file with this in mind.
+					</p>
+				</blockquote>
+				
+				<h3>
+					2. Specify the grid.
+				</h3>
+				
+				<blockquote>
+					<p>
+						In the first (<a href="#comment">uncommented, non-blank</a>) line of the
+						text file, specify the size of the grid on which the circuit will be
+						described, using the format
+					</p>
+					<blockquote>
+						<table>
+							<tr>
+								<td>
+									<b>xSize,ySize</b>
+								</td>
+							</tr>
+						</table>
+					</blockquote>
+					<p>
+						i.e., the number of gridpoints in the x-direction as an integer, a comma, 
+						the number of gridpoints in the y-direction. Grid points are addressed with
+						<b>(0, 0)</b> in the upper-left-hand corner of the grid and <b>(xSize-1, 
+						ySize-1)</b> in the lower-right-hand corner. For example, the line
+					</p>
+					<blockquote>
+						<table>
+							<tr>
+								<td class="code">
+									<b>50,40</b>
+								</td>
+							</tr>
+						</table>
+					</blockquote>
+					<p>
+						describes a grid 50 gridpoints wide by 40 gridpoints tall, ranging from
+						point <b>(0, 0)</b> in the top-left corner to point <b>(49, 39)</b> in the
+						bottom-right corner <strong>(<a href="#grid-hide" id="grid-show">show
+						illustration</a><a style="display: none;" href="#grid-show"
+						id="grid-hide">hide illustration</a>)</strong>.
+					</p>
+					<blockquote style="display: none;" id="grid-example">
+						<img src="media/grid.jpg" />
+					</blockquote>
+					<p>
+						Note: The resolution with which CircuitSurveyor calculates its vectors and
+						fields is directly related to the resolution of the grid specified in the
+						circuit. For best performance, we recommend a grid with width and height 
+						between 75 and 250 points.
+					</p>
+				</blockquote>
+				
+				<h3>
+					3. Specify the circuit elements.
+				</h3>
+				
+				<blockquote>
+					<p>
+						In each subsequent (<a href="#comment">uncommented, non-blank</a>) line of
+						the file, specify one circuit element that appears in the circuit. Each
+						element must be positioned either horizontally or vertically, with both of
+						its endpoints on a gridpoint. Adjacent elements' endpoints share a gridpoint
+						to indicate they touch; elements must not share a gridpoint except at their
+						endpoints <strong>(<a href="#intersect-hide" id="intersect-show">show
+						example</a><a style="display: none;" href="#intersect-show"
+						id="intersect-hide">hide example</a>)</strong>.
+					</p>
+					<blockquote style="display: none;" id="intersect-example">
+						<table>
+							<tr>
+								<td colspan="2">
+									<em>Careful! Doing this is not allowed, since the two
+									elements share a gridpoint that's not an endpoint of the
+									wire:</em><br />&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<td class="code">
+									<b>
+										...<br /><br /><br />
+										<font color="#92278F">b&nbsp;7,0&nbsp;7,5&nbsp;15.16</font><br />
+										<font color="#00AEEF">w&nbsp;0,0&nbsp;10,0</font><br />
+										<br /><br />...
+									</b>
+								</td>
+								<td>
+									<img src="media/intersect-no.jpg" />
+								</td>
+							</tr>
+						</table>
+						<table>
+							<tr>
+								<td colspan="2">
+									<br /><em>But splitting the wire into two pieces, like
+									this, is okay:</em><br />&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<td class="code">
+									<b>
+										...<br /><br /><br />
+										<font color="#92278F">b&nbsp;7,0&nbsp;7,5&nbsp;15.16</font><br />
+										<font color="#00AEEF">w&nbsp;0,0&nbsp;7,0</font><br />
+										<font color="#FFD800">w&nbsp;7,0&nbsp;10,0</font><br />
+										<br /><br />...
+									</b>
+								</td>
+								<td>
+									<img src="media/intersect-yes.jpg" />
+								</td>
+							</tr>
+						</table>
+					</blockquote>
+					<p>
+						The elements in a circuit file may be listed in any order, so long as, taken
+						in totality, they comprise a complete circuit. 
+					</p>
+					<h4>
+						Wires
+					</h4>
+					<p>
+						If the element is a wire, use the format
+						<blockquote>
+							<b>w xStart,yStart xEnd,yEnd</b>
+						</blockquote>
+						i.e., the letter <em>w</em> (for wire), a space, the x-coordinate of one 
+						endpoint of the wire as an integer, a comma, the y-coordinate of that
+						endpoint as an integer, a space, the x-coordinate of the other endpoint as 
+						an integer, a comma, the y-coordinate of that endpoint as an integer.
+					</p>
+					<h4>
+						Resistors
+					</h4>
+					<p>
+						If the element is a resistor, use the format
+						<blockquote>
+							<b>r xStart,yStart xEnd,yEnd resistance</b>
+						</blockquote>
+						i.e., the letter <em>r</em> (for resistor), a space, the x-coordinate of one
+						endpoint of the resistor as an integer, a comma, the y-coordinate of that
+						endpoint as an integer, a space, the x-coordinate of the other endpoint as 
+						an integer, a comma, the y-coordinate of that endpoint as an integer, a 
+						space, the resistance of the resistor in ohms as an integer or decimal.
+					</p>
+					<h4>
+						Batteries
+					</h4>
+					<p>
+						If the element is a battery, use the format
+						<blockquote>
+							<b>b xStart,yStart xEnd,yEnd voltage</b>
+						</blockquote>
+						i.e., the letter <em>b</em> (for battery), a space, the x-coordinate of the
+						negative-terminal endpoint of the battery as an integer, a comma, the 
+						y-coordinate of that endpoint as an integer, a space, the x-coordinate of
+						the positive-terminal endpoint as an integer, a comma, the y-coordinate of
+						that endpoint as an integer, a space, the voltage of the battery in volts as
+						an integer or decimal.
+					</p>
+					<p>
+						Note that the order in which the endpoints of an element are specified is 
+						reversible with no consequence in the case of the wire and the resistor, but
+						in the battery, the first endpoint specified will be taken as the location
+						of the negative terminal <strong>(<a href="#batteries-hide"
+						id="batteries-show">show example</a><a style="display: none;"
+						href="#batteries-show" id="batteries-hide">hide example</a>)
+					</strong>
+.
+					</p>
+					<blockquote style="display: none;" id="batteries-example">
+						<table>
+							<tr>
+								<td>
+									<p>
+										<em>For batteries, the endpoint listed first corresponds to
+										the negative terminal.<br />So this battery is pointing
+										downward...</em>
+									</p>
+									<blockquote>
+										<table>
+											<tr>
+												<td class="code">
+													<b>
+														<font color="#92278F">b&nbsp;7,0&nbsp;7,5&nbsp;15.16</font>
+													</b>
+												</td>
+											</tr>
+										</table>
+									</blockquote>
+									<p>
+										<em>...but this one is pointing upward....</em>
+									</p>
+									<blockquote>
+										<table>
+											<tr>
+												<td class="code">
+													<b>
+														<font color="#25408F">b&nbsp;7,9&nbsp;7,5&nbsp;4.2</font>
+													</b>
+												</td>
+											</tr>
+										</table>
+									</blockquote>
+								</td>
+								<td>
+									&nbsp; &nbsp; &nbsp; <img src="media/batteries.jpg" />
+								</td>
+							</tr>
+						</table>
+					</blockquote>
+				</blockquote>
+				
+				<h3>
+					<a name="comment">
+						4. Add comments.
+					</a>
+				</h3>
+				
+				<blockquote>
+					<p>
+						Anywhere within a circuit file, any characters appearing between a hash-mark
+						(<b>#</b>) and the end of a line will be treated as a comment and therefore
+						ignored by CircuitSurveyor. Any completely blank lines will also be ignored.
+					</p>
+				</blockquote>
+
+				<h3>
+					5. Add your new circuit to CircuitSurveyor.
+				</h3>
+
+				<blockquote>
+					<p>
+						Once you have completed the creation of your circuit file, you can add it to
+						the list of available circuits in CircuitSurveyor. Open CircuitSurveyor and
+						click the <b>Add new...</b> button. (Note that this may pop up a warning
+						notifying you that CircuitSurveyor is requesting access to your local
+						machine. Say <b>OK</b> to this.
+					</p>
+					<p>
+						Navigate to wherever on your file system your circuit file is saved and
+						select it. (Note that you can use the <b>Control</b>
+						(Windows)/<b>Command</b> (Mac) and <b>Shift</b> keys in the usual ways to
+						select multiple files, if you wish to add several at once.)
+					</p>
+					<p>
+						Note: Custom circuits added to CircuitSurveyor will remain available in the
+						drop-down list only for the rest of the working session. If CircuitSurveyor
+						is closed and reopened, any custom circuits will need to be re-added to the
+						list if you wish to use them again.
+					</p>
+				</blockquote>
+
+			</blockquote>
+			
+		</blockquote>
+		
+		<br />
+		<p>
+			<em>
+				CircuitSurveyor was created in 2010&ndash;11 by Noah Morris, a student of Oberlin
+				College, under the advisement of Oberlin College Professor of Physics
+				<a href="http://www.oberlin.edu/physics/dstyer/">Dan Styer</a>.
+			</em>
+		</p>
+		<p>
+			<em>
+				CircuitSurveyor is released to the public under the terms of the GNU General
+				Public License, version 3. There is no warrantee. For the full terms, see
+				<a href="http://www.gnu.org/licenses/gpl-3.0-standalone.html">here</a>.
+			</em>
+		</p>
+	</body>
+</html>

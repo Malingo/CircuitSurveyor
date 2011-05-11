@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Fri Jun 25 12:14:30 EDT 2010
+onejar.license.required=false
+manifest.classpath=jars/jnlp
+manifest.removesigners=true
+onejar.checkbox=true
+jarname=PoyntPanel.jar
+manifest.mergeall=true
+manifest.mainclass=PoyntPanel
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<po|PoyntPanel>~jars/;<po|PoyntPanel>~.DS_Store
+includes=<inc|PoyntPanel/circuits>;<inc|PoyntPanel/misc>~Paper1.pdf;<inc|PoyntPanel/misc>~Paper2.pdf;<inc|PoyntPanel/src>~Battery.java;<inc|PoyntPanel/src>~CircuitBoard.java;<inc|PoyntPanel/src>~CircularLinkedList.java;<inc|PoyntPanel/src>~Dir.java;<inc|PoyntPanel/src>~DirTable.java;<inc|PoyntPanel/src>~Element.java;<inc|PoyntPanel/src>~Loop.java;<inc|PoyntPanel/src>~Point.java;<inc|PoyntPanel/src>~Poynt.java;<inc|PoyntPanel/src>~PoyntPanel.java;<inc|PoyntPanel/src>~Resistor.java;<inc|PoyntPanel/src>~RowReducer.java;<inc|PoyntPanel/src>~Wire.java

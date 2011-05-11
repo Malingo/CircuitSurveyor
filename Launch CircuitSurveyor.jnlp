@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ****TO RUN CIRCUITSURVEYOR LOCALLY, change the value of the 'codebase'
+	attribute in the line below to the absolute path of the directory in 
+	which this file is located, preceded by 'file://'.**** -->
+<jnlp codebase="http://www.oberlin.edu/physics/dstyer/CircuitSurveyor/"
+	  href="Launch CircuitSurveyor.jnlp" spec="1.0+">
+	<information>
+		<title>CircuitSurveyor</title>
+		<vendor>Noah Morris, Oberlin College</vendor>
+		<homepage href="http://www.oberlin.edu/physics/dstyer/CircuitSurveyor/" />
+		<description>A Java application for visualizing the electric, magnetic, and Poynting fields near an electrical circuit.</description>
+		<description kind="short">Visualizes the electric, magnetic, and Poynting fields near an electrical circuit.</description>
+    	<description kind="one-line">A circuit field visualizer.</description>
+    	<description kind="tooltip">A circuit field visualizer.</description>
+		<icon href="contents/web/media/icon256.png" />
+		<offline-allowed />
+		<shortcut online="true">
+			<desktop />
+			<menu submenu="CircuitSurveyor" />
+		</shortcut>
+	</information>
+	<update check="always" policy="always" />
+	<resources>
+		<j2se version="1.5+" href="http://java.sun.com/products/autodl/j2se" max-heap-size="256m" />
+		<jar href="CircuitSurveyor.jar" main="true" />
+	</resources>
+	<application-desc main-class="CircuitSurveyor"> </application-desc>
+	<update check="background"/>
+</jnlp>

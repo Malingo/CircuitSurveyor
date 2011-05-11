@@ -1,0 +1,10 @@
+2ResistorsInSeries1.txt
+2ResistorsInSeries2.txt
+3ResistorsInParallel1.txt
+3ResistorsInParallel2.txt
+ComplexCircuit1.txt
+ComplexCircuit2.txt
+FourWayCircuit.txt
+HoleCircuit.txt
+TortureTest.txt
+WeirdCircuit.txt

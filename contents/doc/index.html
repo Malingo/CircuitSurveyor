@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<title>
+			CircuitSurveyor
+		</title>
+		<style type="text/css">
+			body {
+				font-family: "Book Antiqua", Palatino, serif;
+			}
+			b {
+				font-family: "Courier New", Courier, monospace;
+				font-weight: bold;
+			}
+		</style>
+		<script type="text/javascript" src="media/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#source-show").click(function() {
+					$("#source-show").hide();
+					$("#source-hide").show();
+					$("#source-example").show();
+				});
+				$("#source-hide").click(function() {
+					$("#source-show").show();
+					$("#source-hide").hide();
+					$("#source-example").hide();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>
+			CircuitSurveyor
+		</h1>
+		<h3>
+			A Java application for visualizing the electric, magnetic, and Poynting fields near an electrical circuit.
+		</h3>
+
+		<p>
+			<em>
+				CircuitSurveyor was created in 2010&ndash;11 by Noah Morris, a student of Oberlin
+				College, under the advisement of Oberlin College Professor of Physics
+				<a href="http://www.oberlin.edu/physics/dstyer/">Dan Styer</a>.
+			</em>
+		</p>
+		<br />
+		<p>
+			<table>
+				<tr>
+					<td>
+						<strong>Click icon to launch CircuitSurveyor:</strong>
+					</td>
+					<td>
+						<script src="http://www.java.com/js/deployJava.js"></script>
+						<script>
+							var dir = location.href.substring(0, location.href.lastIndexOf('/')+1);
+							var url = dir + "LaunchCircuitSurveyor.jnlp";
+							deployJava.launchButtonPNG = "media/icon64.png";
+							deployJava.createWebStartLaunchButton(url, 1.5);
+						</script>
+					</td>
+				</tr>
+			</table>
+		</p>
+		<p>
+			
+		</p>
+		<p>
+			<a href="help.html">Instructions for using CircuitSurveyor</a>
+			(also reachable from within CircuitSurveyor by clicking the <b>Help</b> button).
+		</p>
+		<p>
+			<a href="custom.html">Instructions for designing your own
+			custom circuits</a> for use within CircuitSurveyor.
+		</p>
+		<p>
+			<a id="source-show" href="#source-hide">Show instructions</a>
+			<a id="source-hide" href="#source-show" style="display: none;">Hide instructions</a>
+			to download the source code of CircuitSurveyor as a .zip file.
+			<blockquote id="source-example" style="display: none;">
+				Right-click <strong><a href="CircuitSurveyor.zip">CircuitSurveyor.zip</a></strong>
+				and choose to save the linked file to your local computer. Unzip the downloaded file
+				into a directory. Use a text editor to edit the fifth line of
+				'Launch CircuitSurveyor.jnlp', by changing the 'codebase' attribute to the directory
+				containing the file. The local copy of the program should then be launchable through
+				Java Web Start, either by double-clicking on the .jnlp file, or by making use of the
+				'javaws' command-line tool.
+			</blockquote>
+		</p>
+		
+		<br />
+		<p>
+			Screenshot:
+			<br />
+			<img src="media/screenshot.png" width="100%">
+		</p>
+		<p>
+			<img src="media/gpl.png">
+			<em>
+				CircuitSurveyor is released to the public under the terms of the GNU General public
+				license, version 3. There is no warranty. For the full terms, see
+				<a href="http://www.gnu.org/licenses/gpl-3.0-standalone.html">here</a>.
+			</em>
+		</p>
+		
+	</body>
+</html>

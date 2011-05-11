@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<title>
+			CircuitSurveyor :: How to use CircuitSurveyor.
+		</title>
+		<style type="text/css">
+			body {
+				font-family: "Book Antiqua", Palatino, serif;
+			}
+			b {
+				font-family: "Courier New", Courier, monospace;
+				font-weight: bold;
+			}
+			b.letter {
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			<em><a href="index.html">&lt; Back to main page</a></em>
+		</p>
+		
+		<h1>
+			How to use CircuitSurveyor:
+		</h1>
+
+		<blockquote>
+			<p>
+				<img src="media/screenshot-a.png" width="100%">
+			</p>
+			<p>
+				Select a circuit file from the drop-down menu (<b class="letter">A</b>). (Use
+				the <b>Add new...</b> button (<b class="letter">B</b>) to choose files from the
+				local file system to add to the drop-down list. See <a href="custom.html">this
+				page</a> for instructions on creating custom circuit files.)
+			</p>
+			<p>
+				The program will draw the selected circuit. The <b>Circuit</b> and <b>Circuit
+				labels</b> checkboxes (<b class="letter">C</b> and <b class="letter">D</b>) toggle
+				whether or not the circuit diagram and the labels specifying the battery potentials
+				and resistances of the circuit elements are displayed.
+			</p>
+			<p>
+				After selecting the desired circuit, press the <b>Okay</b> button (<b
+				class="letter">E</b>) to load it. Only at this point does the program calculate the
+				fields.
+			</p>
+			<p>
+				The <b>Gradient</b> checkbox (<b class="letter">F</b>) toggles the display of the
+				circuit's potential gradient; the location in the circuit with the highest potential
+				will be colored black, and the lowest potential will be white.
+			</p>
+			<p>
+				The <b>Slope field</b> checkbox (<b class="letter">G</b>) toggles the display of the
+				circuit's Poynting vector slope field; at each gridpoint within the circuit, a unit
+				arrow is drawn in the the direction ofthe Poynting vector (energy flow).
+			</p>
+			<p>
+				The <b>Flow lines</b> checkbox (<b class="letter">H</b>) toggles the display of the
+				circuit's Poynting vector flow lines; lines are drawn tracing the energy flow
+				through the circuit.
+			</p>
+			<p>
+				Moving the mouse around over a loaded circuit has several effects. First, the
+				numerical components of the electric field vector, magnetic field vector, and
+				Poynting vector at the location of the pointer are displayed
+				in the bottom left corner of the window (<b class="letter">I</b>).
+				Second, the electric field vector, magnetic field vector, and Poynting vector at
+				that location are displayed on the screen, in blue, green, and yellow, respectively
+				(<b class="letter">J</b>).
+			</p>
+			<p>
+				If the mouse is clicked while positioned over the circuit, the displayed vector
+				arrows are fixed onto the screen. This can be done repeatedly at any location within
+				the circuit. The <b>Clear arrows</b> button (<b class="letter">K</b>) erases any
+				vector arrows that have been fixed in this way.
+			</p>
+			<p>
+				The <b>Help</b> button (<b class="letter">L</b>) opens this page in the user's default
+				web browser.
+			</p>
+
+			<br />
+			<h3>
+				Technical note:
+			</h3>
+			
+			<blockquote>
+				<p>
+					CircuitSurveyor models a circuit as a two-dimensional slice through a stack of 
+					identical circuits extending infinitely into and out of the screen, comprising
+					infinitely long solenoids. (Only using this model is the analysis tractable and
+					the visualization effective.) Therefore, there is no magnetic field (and thus no
+					Poynting vector) on the exterior of the circuit.
+				</p>
+			</blockquote>
+
+		</blockquote>
+
+		<br />
+		<p>
+			<em>
+				CircuitSurveyor was created in 2010&ndash;11 by Noah Morris, a student of Oberlin
+				College, under the advisement of Oberlin College Professor of Physics
+				<a href="http://www.oberlin.edu/physics/dstyer/">Dan Styer</a>.
+			</em>
+		</p>
+		<p>
+			<em>
+				CircuitSurveyor is released to the public under the terms of the GNU General
+				Public License, version 3. There is no warrantee. For the full terms, see
+				<a href="http://www.gnu.org/licenses/gpl-3.0-standalone.html">here</a>.
+			</em>
+		</p>
+	</body>
+</html>

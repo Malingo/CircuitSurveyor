@@ -1,0 +1,7 @@
+CircuitSurveyor is a Java application for visualizing the electric, magnetic, and Poynting fields near an electrical circuit.
+
+CircuitSurveyor was created in 2010–11 by Noah Morris, a student of Oberlin College, under the advisement of Oberlin College Professor of Physics Dan Styer.
+
+CircuitSurveyor is deployed through Java WebStart; visit http://oberlin.edu/physics/dstyer/CircuitSurveyor/ to download and run it.
+
+CircuitSurveyor is released to the public under the terms of the GNU General public license, version 3. There is no warranty.
